@@ -1,0 +1,33 @@
+.navbar-container {
+  height: 3.7em;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5em;
+  padding-right: 5em;
+  background-color: rgb(49, 49, 154);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo-image {
+  height: 40px;
+  width: 40px;
+}
+.brand-title {
+  color: white;
+  font-size: 1.5em;
+  margin-left: 0.3em;
+  letter-spacing: 1.5px;
+  font-family: sans-serif;
+}
+.user-name {
+  color: white;
+  font-family: sans-serif;
+}
