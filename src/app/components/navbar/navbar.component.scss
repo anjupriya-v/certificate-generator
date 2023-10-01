@@ -27,7 +27,15 @@
   letter-spacing: 1.5px;
   font-family: sans-serif;
 }
+.user-info-container {
+  display: flex;
+  align-items: center;
+}
+.user-icon {
+  color: white;
+}
 .user-name {
   color: white;
   font-family: sans-serif;
+  margin-left: 0.3em;
 }
