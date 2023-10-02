@@ -1,9 +1,96 @@
 .preview-container {
-  height: 30em;
-  width: 30em;
+  margin: 1em;
 }
-#my-node {
+.preview-card {
+  width: 50em;
+}
+.preview-card-content {
+  padding: 0.5em;
+}
+.preview-card-content-header {
+  display: flex;
+  align-items: center;
+}
+.preview-icon {
+  margin-left: 0.3em;
+}
+#certificate-container {
   background-color: white;
   margin: 0px;
-  padding-block: 1rem;
+  position: relative;
+  padding-block: 0em;
+  width: 100%;
+  height: auto;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.overlay-corners {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 30em;
+}
+.top-left-label {
+  content: " ";
+  border-top: 100px solid #008ce6;
+  border-right: 100px solid transparent;
+  width: 0;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.bottom-right-label {
+  content: " ";
+  border-bottom: 100px solid #008ce6;
+  border-left: 100px solid transparent;
+  width: 0;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+.certificate-content-div {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 30em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+.certificate-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 26em;
+  border: 5px solid rgb(212, 204, 122);
+}
+.certificate-placeholder {
+  color: rgba($color: #000000, $alpha: 0.4);
+}
+h1 {
+  margin-block-start: 0.7em;
+}
+h3,
+h5 {
+  margin-block-start: 0.3em;
+  white-space: nowrap;
+}
+.certificate-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2em;
+}
+.completion-date {
+  margin-left: 4em;
+}
+.instructor-name {
+  margin-right: 4em;
+}
+.download-button-container {
+  margin-top: 2em;
 }

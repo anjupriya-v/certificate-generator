@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import domtoimage from 'dom-to-image';
 
 @Component({
@@ -8,16 +8,21 @@ import domtoimage from 'dom-to-image';
 })
 export class PreviewComponent implements OnInit {
   node: any;
+  @Input() learnerName: any = '';
+  @Input() courseName: any = '';
+  @Input() instructorName: any = '';
+  @Input() completionDate: any = '';
   constructor() {}
 
   ngOnInit(): void {
-    this.node = document.getElementById('my-node');
+    this.node = document.getElementById('certificate-container');
   }
-  domToImage() {
-    domtoimage.toJpeg(this.node, { quality: 0.95 }).then(function (dataUrl) {
-      var img = new Image();
-      img.src = dataUrl;
-      document.body.appendChild(img);
+  downloadCertificate() {
+    domtoimage.toJpeg(this.node, { quality: 0.95 }).then((dataUrl) => {
+      var link = document.createElement('a');
+      link.download = this.learnerName + '.jpeg';
+      link.href = dataUrl;
+      link.click();
     });
   }
 }

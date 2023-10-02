@@ -1,9 +1,64 @@
 <div class="preview-container">
-  <div id="my-node">
-    <h1>Hello</h1>
-    <h1>Hello</h1>
-    <h1>Hello</h1>
-    <h1>Hello</h1>
-  </div>
+  <mat-card class="preview-card">
+    <mat-card-content class="preview-card-content">
+      <div class="preview-card-content-header">
+        <h2>Preview</h2>
+        <mat-icon class="preview-icon">remove_red_eye</mat-icon>
+      </div>
+      <div id="certificate-container">
+        <div class="overlay-corners">
+          <div class="top-left-label"></div>
+          <div class="bottom-right-label"></div>
+        </div>
+        <div class="certificate-content-div">
+          <div class="certificate-content">
+            <h1>Certificate of Completion</h1>
+            <h5>This certificate is awarded to</h5>
+            <h3>
+              {{ learnerName }}
+              <span class="certificate-placeholder" *ngIf="!learnerName"
+                >Learner Name</span
+              >
+            </h3>
+            <h5>for successfully completing the course on</h5>
+            <h3>
+              {{ courseName }}
+              <span class="certificate-placeholder" *ngIf="!courseName"
+                >Course Name</span
+              >
+            </h3>
+            <div class="certificate-footer">
+              <div class="completion-date">
+                <h5>Completion Date</h5>
+                <h3>
+                  {{ completionDate }}
+                </h3>
+                <p class="certificate-placeholder" *ngIf="!completionDate">
+                  Completion Date
+                </p>
+              </div>
+              <div class="instructor-name">
+                <h5>Instructor Name</h5>
+                <h3>
+                  {{ instructorName }}
+                </h3>
+                <p class="certificate-placeholder" *ngIf="!instructorName">
+                  Instrutcor Name
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="download-button-container">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="downloadCertificate()"
+        >
+          Download Certificate <mat-icon>save_alt</mat-icon>
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>
-<button (click)="domToImage()">Convert</button>

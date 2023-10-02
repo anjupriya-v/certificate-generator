@@ -3,9 +3,19 @@
 </div>
 <div class="content-div">
   <div class="form-container-div">
-    <app-form></app-form>
+    <app-form
+      (learnerName)="getLearnerName($event)"
+      (courseName)="getCourseName($event)"
+      (instructorName)="getInstructorName($event)"
+      (completionDate)="getCompletionDate($event)"
+    ></app-form>
   </div>
   <div class="preview-container-div">
-    <app-preview></app-preview>
+    <app-preview
+      [learnerName]="learnerName"
+      [courseName]="courseName"
+      [instructorName]="instructorName"
+      [completionDate]="completionDate"
+    ></app-preview>
   </div>
 </div>
