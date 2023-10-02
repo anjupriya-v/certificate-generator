@@ -2,7 +2,7 @@
   <mat-card class="form-card">
     <mat-card-content class="form-card-content">
       <h1>Create your certificate here!</h1>
-      <form class="form-div">
+      <form class="form-div" [formGroup]="form">
         <div class="form-field-div">
           <mat-form-field class="form-field">
             <mat-label>Learner Name</mat-label>
@@ -37,6 +37,16 @@
           </mat-form-field>
         </div>
       </form>
+      <div class="clear-button-container">
+        <button
+          mat-raised-button
+          color="accent"
+          [disabled]="emptyForm"
+          (click)="clearForm()"
+        >
+          Clear form
+        </button>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>

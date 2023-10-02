@@ -6,12 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  title = 'certificate-generator';
   learnerName: any;
   courseName: any;
   instructorName: any;
   completionDate: any;
+  learnerNameError: boolean = true;
+  errors: any;
   getLearnerName(learnerName: any) {
     this.learnerName = learnerName;
+    console.log(this.learnerNameError);
   }
   getCourseName(courseName: any) {
     this.courseName = courseName;
@@ -21,5 +25,8 @@ export class AppComponent {
   }
   getCompletionDate(completionDate: any) {
     this.completionDate = completionDate;
+  }
+  getErrors(errors: any) {
+    this.errors = errors;
   }
 }

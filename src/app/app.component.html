@@ -8,6 +8,7 @@
       (courseName)="getCourseName($event)"
       (instructorName)="getInstructorName($event)"
       (completionDate)="getCompletionDate($event)"
+      (errors)="getErrors($event)"
     ></app-form>
   </div>
   <div class="preview-container-div">
@@ -16,6 +17,7 @@
       [courseName]="courseName"
       [instructorName]="instructorName"
       [completionDate]="completionDate"
+      [errors]="errors"
     ></app-preview>
   </div>
 </div>

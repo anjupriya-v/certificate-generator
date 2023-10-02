@@ -2,7 +2,7 @@
   margin: 1em;
 }
 .form-container .form-card {
-  height: 35em;
+  height: 37em;
   width: 30em;
   padding: 1em;
 }
@@ -18,4 +18,11 @@
 }
 .form-field {
   width: 30em;
+}
+.clear-button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  margin-right: 4em;
 }

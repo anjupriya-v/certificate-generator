@@ -51,10 +51,14 @@
         </div>
       </div>
       <div class="download-button-container">
+        <span class="form-error" *ngIf="!validForm"
+          >Fill all the fields to enable download option</span
+        >
         <button
           mat-raised-button
           color="primary"
           (click)="downloadCertificate()"
+          [disabled]="!validForm"
         >
           Download Certificate <mat-icon>save_alt</mat-icon>
         </button>
