@@ -6,19 +6,31 @@
         <div class="form-field-div">
           <mat-form-field class="form-field">
             <mat-label>Learner Name</mat-label>
-            <input matInput (keyup)="getLearnerName($event)" />
+            <input
+              matInput
+              (keyup)="getLearnerName($event)"
+              formControlName="learnerName"
+            />
           </mat-form-field>
         </div>
         <div class="form-field-div">
           <mat-form-field class="form-field">
             <mat-label>Course Name</mat-label>
-            <input matInput (keyup)="getCourseName($event)" />
+            <input
+              matInput
+              (keyup)="getCourseName($event)"
+              formControlName="courseName"
+            />
           </mat-form-field>
         </div>
         <div class="form-field-div">
           <mat-form-field class="form-field">
             <mat-label>Instrutor Name</mat-label>
-            <input matInput (keyup)="getInstructorName($event)" />
+            <input
+              matInput
+              (keyup)="getInstructorName($event)"
+              formControlName="instructorName"
+            />
           </mat-form-field>
         </div>
         <div class="form-field-div">
@@ -27,7 +39,8 @@
               matInput
               [matDatepicker]="picker"
               placeholder="Choose Completion Date"
-              (dateInput)="getCompletionDate($event.value)"
+              (dateInput)="getCompletionDate($event)"
+              #dateOfCompletion
             />
             <mat-datepicker-toggle
               matSuffix

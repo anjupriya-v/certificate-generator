@@ -15,7 +15,6 @@ export class AppComponent {
   errors: any;
   getLearnerName(learnerName: any) {
     this.learnerName = learnerName;
-    console.log(this.learnerNameError);
   }
   getCourseName(courseName: any) {
     this.courseName = courseName;

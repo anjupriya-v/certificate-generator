@@ -1,4 +1,11 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-form',
@@ -6,6 +13,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
+  @ViewChild('dateOfCompletion', { static: false })
+  public dateOfCompletion!: ElementRef;
   @Output() learnerName = new EventEmitter<string>();
   @Output() courseName = new EventEmitter<string>();
   @Output() instructorName = new EventEmitter<string>();
@@ -40,10 +49,19 @@ export class FormComponent implements OnInit {
         : false;
   }
   clearForm() {
-    this.form.controls['learnerName'].setValue('');
-    this.form.controls['courseName'].setValue('');
-    this.form.controls['instructorName'].setValue('');
-    this.form.controls['completionDate'].setValue('');
+    this.form.reset();
+    this.dateOfCompletion.nativeElement.value = '';
+    this.learnerName.emit('');
+    this.courseName.emit('');
+    this.instructorName.emit('');
+    this.completionDate.emit('');
+    this.isError = {
+      learnerName: true,
+      courseName: true,
+      instructorName: true,
+      completionDate: true,
+    };
+    this.errors.emit(this.isError);
   }
   getLearnerName(value: Event) {
     this.form.controls['learnerName'].setValue(
@@ -68,8 +86,8 @@ export class FormComponent implements OnInit {
         ? true
         : false;
     this.isFormEmpty();
-
     this.courseName.emit((value.target as HTMLInputElement).value);
+    this.errors.emit(this.isError);
   }
   getInstructorName(value: Event) {
     this.form.controls['instructorName'].setValue(
@@ -81,16 +99,16 @@ export class FormComponent implements OnInit {
         ? true
         : false;
     this.isFormEmpty();
-
     this.instructorName.emit((value.target as HTMLInputElement).value);
+    this.errors.emit(this.isError);
   }
-  getCompletionDate(value: any) {
+  getCompletionDate(date: any) {
     var dateString =
-      new Date(value).getDate() +
+      new Date(date.value).getDate() +
       '/' +
-      (new Date(value).getMonth() + 1) +
+      (new Date(date.value).getMonth() + 1) +
       '/' +
-      new Date(value).getFullYear();
+      new Date(date.value).getFullYear();
     this.form.controls['completionDate'].setValue(dateString);
     this.isError.completionDate =
       this.form.controls['completionDate'].errors &&
@@ -98,7 +116,7 @@ export class FormComponent implements OnInit {
         ? true
         : false;
     this.isFormEmpty();
-
-    this.completionDate.emit(value != null ? dateString : '');
+    this.completionDate.emit(date != null ? dateString : '');
+    this.errors.emit(this.isError);
   }
 }
