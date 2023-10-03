@@ -1,5 +1,8 @@
 # CertificateGenerator
 
+![image](https://github.com/anjupriya-v/certificate-generator/assets/84177086/37410424-2be7-4db0-ad17-7b376b465363)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
 
 ## Development server
