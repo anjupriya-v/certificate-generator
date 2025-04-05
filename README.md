@@ -14,7 +14,7 @@ https://github.com/user-attachments/assets/97b035d4-a547-43b3-9795-98648497c16f
 ## Procedure to run this application
 - Clone the repository
 ```
-$ git clone https://github.com/anjupriya-v/e-Learning-spot.git
+$ git clone https://github.com/anjupriya-v/certificate-generator.git
 ```
 - Redirect to the cloned repo directory
 
